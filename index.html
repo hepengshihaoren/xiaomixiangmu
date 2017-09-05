@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米商城</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">      
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="icon favicon" href="favicon.ico">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+        
+<body>
+     
+    
+    <div class="xiaomi">
+        <header id="header">
+            
+            <div class="w">
+                <div class="pull-right mass">
+                    <div class="drop-down">
+                    </div>
+                    <a href="javascript:void(0)" id="pause">播放/暂停<i class="line">|</i></a>
+                    <a href="javascript:void(0)">登录</a><i class="line">|</i><a href="#" class="register">注册</a>
+                    <a href="#" class="car">购物车(0)</a>
+                </div>
+                
+
+            </div>
+           
+            <script type="text/html" id="header_template">
+                <ul>
+                    {{each list as value i}}
+                    <li><a href="#">{{value}}</a></li>
+                    {{if i != list.length-1}}
+                    <li class="line">|</li>
+                    {{/if}} {{/each}}
+                </ul>
+            </script>
+        </header>
+        
+        <nav id="top_nav">
+
+            <div class="w">
+
+                <div class="logo_left">
+                    <a href="#" class="logo"></a>
+                    <a href="#" class="gif"></a>
+                </div>
+                <div class="pull-right searchS">
+                    <input type="text" id="searchK">
+                    <label for="search-input"></label>
+                    <a href="#" class="iphone">红米Pro</a>
+                    <a href="#" class="noteBook">小米笔记本air</a>
+                </div>
+            </div>
+            <div class="main">
+		
+                <div class="plate">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </div>
+                <div class="four"></div>
+                <div class="five"></div>
+                <div class="six"><div class="line"></div></div>
+                <div class="seven"><div class="line"></div></div>
+	
+            </div>
+            <div class="circleProgress_wrapper">
+                <div class="wrapper">
+                    <div class="rights">
+                        <div class="circleProgress"></div>
+                    </div>
+                </div>
+                <div class="wrapper ">
+                    <div class="lefts">
+
+                        <div class="circleProgress">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="first"></div>
+                <div class="second"></div>
+                <div class="third"></div>
+                <div class="fourth"></div>
+                <div class="fifth"></div>
+                <div class="sixth"></div>
+
+        
+
+            </div>
+            <script type="text/html" id="tap_template">
+                <ul class="pull-left">
+                    {{each list as value i}}
+                    <li data-type="{{value.type}}"><a href="#">{{value.name}}</a></li>
+                    {{/each}}
+                </ul>
+            </script>
+        </nav>
+         <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="willesPlay">
+                    <div class="playHeader">
+                        <div class="videoName">TaylorSwift - "你明明那么孤独,却说一个人真好"<span class="closeV">x</span></div>
+                    </div>
+                    <div class="playContent">
+                        <div class="turnoff">
+                            <ul>
+                                <li><a href="javascript:;" title="喜欢" class="glyphicon glyphicon-heart-empty"></a></li>
+                                <li><a href="javascript:;" title="关灯" class="btnLight on glyphicon glyphicon-sunglasses"></a></li>
+                                <li><a href="javascript:;" title="分享" class="glyphicon glyphicon-share"></a></li>
+                            </ul>
+                        </div>
+                        <video width="100%" height="100%" id="playVideo">
+                            <source src="./video/TaylorSwift.mp4" type="video/mp4"></source>
+                            
+                        </video>
+                        <div class="playTip glyphicon glyphicon-play"></div>
+                    </div>
+                    <div class="playControll">
+                        <div class="playPause playIcon"></div>
+                        <div class="timebar">
+                            <span class="currentTime">0:00:00</span>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                                </div>
+                            <span class="duration">0:00:00</span>
+                        </div>
+                        <div class="otherControl">
+                            <span class="volume glyphicon glyphicon-volume-down"></span>
+                            <span class="fullScreen glyphicon glyphicon-fullscreen"></span>
+                            <div class="volumeBar">
+                                    <div class="volumewrap">
+                                        <div class="progress">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 8px;height: 40%;"></div>
+                                    </div>
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        <audio src="music/Taylor Swift - You Belong With Me.mp3"  autoplay loop id="music0"></audio>
+        <section id="tap_menu">
+            <script type="text/html" id="tap_menu_template">
+                <ul class="clearfix">
+                    {{ each list as value i}}
+                    <li class="pull-left">
+                        <a href="#">
+                            <div><img src="{{value.imgUrl}}" alt="">
+                                <p>{{value.name}}</p><span>{{value.title}}</span></div>
+                        </a>
+                    </li>
+
+                    {{ if i != list.length-1}}
+                    <li class="line pull-left"><i></i></li>
+
+                    {{/if}} {{/each}}
+                </ul>
+            </script>`
+        </section>
+        <main>
+            <section id="tap_pull">
+                <script type="text/html" id="tap_pull_template">
+                    <ul>
+                        {{each list as value i}}
+                        <li data-type="{{value.type}}"><a href="#">{{value.content}}</a></li>
+                        {{/each}}
+                    </ul>
+                    </div>
+                </script>
+                <script type="text/html" id="pullK_template">
+                    <ul class="pull-left">
+                        {{each list as value i}}
+                        <li><a href="http:{{value.sourceUrl}}"><img src="{{value.imgUrl}}" alt=""><span>{{value.name}}</span></a> {{if value.buyStatus
+                            =="true"}}
+                            <a href="#" class="buy">选购</a>{{/if}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </script>
+                <div class="w">
+                    <aside>
+
+                    </aside>
+                    <script type="text/html" id="article_template">
+                        <article>
+                            {{each list as value i}} {{if i == 0}}
+                            <a href="#" class="current"><img src="{{value.imgUrl}}" alt=""></a> {{else}}
+                            <a href="#" style="display:none"><img src="{{value.imgUrl}}" alt=""></a> {{/if}} {{/each}}
+                            <i href="#" class="before">&lt;</i>
+                            <i href="#" class="after">&gt;</i>
+                        </article>
+                    </script>        
+                    <div class="lis clearFix"></div>
+                    <audio src="music/天龙八部乔峰出场音乐.mp3" id="music1"></audio>
+                    <audio src="music/张国荣 - MONICA (Live).mp3" id="music2"></audio>
+                    <audio src="music/周华健 - 难念的经 (铃声).mp3" id="music3"></audio>
+                    <audio src="music/谭咏麟 - 爱情陷阱 .mp3" id="music4"></audio>
+                    <div class="musicBk">
+                        <input id="r_1" type="radio" name="p" class="sel_page_1" checked="checked" />
+                        <input id="r_2" type="radio" name="p" class="sel_page_2" />
+                        <input id="r_3" type="radio" name="p" class="sel_page_3" />
+                        <input id="r_4" type="radio" name="p" class="sel_page_4" />
+                        <label for="r_1" class="pss_contr c1" id="pss_contr1"></label> 
+                        <label for="r_2" class="pss_contr c2" id="pss_contr2"></label>
+                        <label for="r_3" class="pss_contr c3" id="pss_contr3"></label>
+                        <label for="r_4" class="pss_contr c4" id="pss_contr4"></label>
+                    </div>
+
+                </div>
+                
+            </section>
+            <section id="nav_bottom">
+                <div class="w clearfix">
+                    <ul class="clearfix">
+                        <li><a href="#">选购手机</a></li>
+                        <li><a href="#">企业团购</a></li>
+                        <li><a href="#">官方产品</a></li>
+                        <li><a href="#">小米移动</a></li>
+                        <li><a href="#">以旧换新</a></li>
+                        <li><a href="#">话费充值</a></li>
+                    </ul>
+                    <a href="#" class="iphone_pic"><img src="http://i3.mifile.cn/a4/1327d707-4f67-4c36-8ae5-3d7704c989eb" alt=""></a>
+                    <a href="#" class="iphone_pic"><img src="http://i3.mifile.cn/a4/c202123c-4197-4666-9793-2f1e156ab23a" alt=""></a>
+                    <a href="#" class="iphone_pic"><img src="http://i3.mifile.cn/a4/216f7f38-66ee-4c1b-8409-8d77cb64d386" alt=""></a>
+                </div>
+
+
+            </section>
+            
+           
+        </main>
+        
+        <section id="intelligent_hardware">
+             <script type="text/html" id="hardware-template">
+                <ul class="right pull-right clearfix">
+                    {{each list as value i}}
+                    <li>
+                        <a href="#">
+                            <p class="top">
+                                <span class="{{ if value.discountType =='free'}}free{{else if value.discountType =='new'}}new{{/if}}">{{value.discount}}</span>
+                            </p>
+                            <img src="{{value.imgUrl}}" alt="">
+                            <p class="name">{{value.title}}</p>
+                            <p class="desc">{{value.desc}}</p>
+                            <p class="price">{{value.price}}元</p>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </script> 
+            <div class="w clearfix">
+                <div class="textchange w">
+                    <p class="text" id="word"><a href="javasript:void(0)">黑马深圳校区前端10期菜鸟HP</a></p>
+                   
+                </div>
+                <div class="hardware_type clearfix">
+                    <h3 class="pull-left">智能硬件</h3>
+                    <a href="#" class="pull-right">
+                    <span>查找全部</span></a>
+                </div>
+                <a href="#" class="left pull-left">
+                    <img src="http://i3.mifile.cn/a4/124d82cc-cfce-44ab-b711-28b21be81683" alt="">
+                </a>
+            </div>
+            
+            
+        </section>
+        
+      
+        
+        <script type="text/html" id="common-template">
+            <div class="w">
+
+                <div class="top clearfix">
+                    <h3 class="pull-left">{{topTitleName}}</h3>
+
+
+                    <ul class="pull-right clearfix">
+                        {{if subs}} {{each subs}}
+                        <li class="pull-left"><a href="#" class="{{$value.key}}">{{$value.name}}</a></li>
+                        {{/each}} {{ else }}
+                        <li class="pull-left left-btn"></li>
+                        <li class="pull-left right-btn"></li>
+                        {{/if}}
+
+                    </ul>
+                </div>
+                <div class="bottom">
+                    {{set current=0}}
+                    <ul class="clearfix">
+                        {{each list}} {{if $index%4==0}} {{if leftGoods}}
+                        <li class="left"><a href="#"><img src="{{leftGoods[current++].imgUrl}}" /></a></li>
+                        {{/if}} {{/if}} {{if $index != list.length-1}}
+                        <li class="normal {{if $index%4==0}}{{if !leftGoods}}no-ml{{/if}}{{/if}}  ">
+                            <a href="#">
+                                        {{if !type}}
+                                        <img src="http:{{$value.imgUrl}}" alt="">
+                                        {{else }}
+                                        
+                                        {{if $value.discount}}
+                                        <p class="sale"><span>{{$value.discount}}</span></p>
+                                        {{/if}}
+                                        {{if !leftGoods}} 
+                                        <p class="hold"></p>
+                                        <img src="http:{{$value.imgUrl}}" alt=""> 
+                                        {{else}}
+                                        <img src="{{$value.imgUrl}}" alt="">
+                                        {{/if}}
+                                        {{/if}}
+                                        <p class="name">{{$value.title}}{{$value.name}}</p>
+                                        <p class="price">{{$value.price}}元</p>
+                                        <p class="eval">{{$value.heat}}{{$value.favorable}}人评价</p>
+
+                                    </a>
+                        </li>
+                        {{else }} {{if leftGoods}}
+
+                        <li class="last">
+                            <a href="#">
+                                <div class="pull-left">
+                                    <p>{{$value.title}}{{$value.name}}</p>
+                                    <p>{{$value.price}}元</p>
+                                </div>
+                                <img src="{{if !type}}http:{{/if}}{{$value.imgUrl}}" alt="" class="pull-left">
+                            </a>
+                            <a href="#">
+                                <div class="pull-left">
+                                    <p>浏览更多</p>
+                                    <p>热门</p>
+                                </div>
+                                <img src="{{if !type}}http:{{/if}}{{$value.imgUrl}}" alt="" class="pull-left">
+
+                            </a>
+                        </li>
+                        {{else }}
+                        <li class="normal">
+                            <a href="#">
+                                        {{if !type}}
+                                        <img src="http:{{$value.imgUrl}}" alt="">
+                                        {{else }}
+                                        {{if $value.discount}}
+                                        <p class="sale"><span>{{$value.discount}}</span></p>
+                                        {{/if}}
+                                        {{if !leftGoods}}
+                                        <p class="hold"></p>
+                                        <img src="http:{{$value.imgUrl}}" alt="">
+                                        {{else }}
+                                        <img src="{{$value.imgUrl}}" alt="">
+
+                                        {{/if}}
+                                        {{/if}}
+                                        <p class="name">{{$value.title}}{{$value.name}}</p>
+                                        <p class="price">{{$value.price}}元</p>
+                                        <p class="eval">{{$value.heat}}人评价</p>
+
+                                    </a>
+                        </li>
+                        {{/if}} {{/if}} {{/each}}
+                    </ul>
+
+                </div>
+
+            </div>
+        </script>
+        <section id="match">
+        </section>
+        <section id="parts"></section>
+        <section id="around"></section>
+        <section id="recommend"></section>
+        <script type="text/html" id="hotproduct-template">
+            <div class="w">
+                <div class="top">
+                    <h3>{{title}}</h3>
+                </div>
+                <ul class="clearfix">
+                    {{each list }}
+                    <li>
+                        <a href="#">
+                        <img src="{{$value.imageUrl}}" alt="">
+                        <p class="eval">{{$value.review}}</p>
+                        <p class="intro">
+                            <span class="name">{{$value.name}}</span>
+                            <span class="price">{{$value.price}}元</span>
+                        </p>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </script>
+        <section id="hotproduct"></section>
+        <script type="text/html" id="content-template">
+            <div class="w">
+                <div class="top">
+                    <h3>{{title}}</h3>
+                </div>
+                <ul class="clearfix">
+                    {{each contents}} {{set outIndex = $index}}
+                    <li class="{{$value.list[0].type}}">
+                        <h3>{{$value.title}}</h3>
+                        <ol class="clearfix" data-index="0">
+                            {{set list = $value.list}} {{each list}}
+                            <li>
+                                {{if $index!= list.length-1}}
+                                <p class="title">{{$value.title}}</p>
+
+                                <p class="{{if outIndex==0}}{{if $index==0}}first-desc{{/if}}{{else}}desc{{/if}}">{{$value.desc}}</p>
+
+                                <p class="other">{{$value.price}}</p>
+                                {{else}}
+                                <p class="desc1">{{$value.desc1}}</p>
+                                <p class="desc2">{{$value.desc2}}</p>
+                                <p class="other-btn">{{$value.btnTxt}}</p>
+
+                                {{/if}}
+                                <img src="{{$value.imgUrl}}" alt="">
+
+                            </li>
+                            {{/each}}
+                        </ol>
+                        <div class="indicator clearfix">
+                            {{each $value.list}}
+                            <a class="{{if $index==0}}current{{/if}}"><span></span></a> {{/each}}
+                        </div>
+
+                        <i class="arrow-left">&lt;</i>
+                        <i class="arrow-right">&gt;</i>
+
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </script>
+        <section id="content"></section>
+        <script id="video-template" type="text/html">
+            <div class="w">
+                <div class="top">
+                    <h3>{{title}}</h3>
+                </div>
+                <ul class="clearfix">
+                    {{each list}}
+                    <li>
+                        <img src="{{$value.imgUrl}}" alt="">
+                        <span class="play"><i></i></span>
+                        <p class="title">{{$value.videotitle}}</p>
+                        <p class="desc">{{$value.desc}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </script>
+        <section id="video"  data-src="./video/leijun.mp4" class="xmMovie"></section>
+
+        <footer>
+            <div class="footer w">
+                <div class="footerService">
+                    <ul class="clearfix">
+                        <li><a href=""><span class="icon iconfont">&#xf0086;</span> 1小时快修服务</a></li>
+                        <li><a href=""><span class="icon iconfont">&#xe638;</span> 7天无条件退货</a></li>
+                        <li><a href=""><span class="icon iconfont">&#xe638;</span> 15天免费换货</a></li>
+                        <li><a href=""><span class="icon iconfont">&#xe657;</span> 满150元包邮</a></li>
+                        <li><a href=""><span class="icon iconfont">&#xe64b;</span> 520余家售后网点</a></li>
+                    </ul>
+                </div>
+                <div class="footerInfo clearfix">
+                    <div class="infoLeft">
+                        <dl>
+                            <dt>帮助中心</dt>
+                            <dd><a href="">账户管理</a></dd>
+                            <dd><a href="">购物指南</a></dd>
+                            <dd><a href="">订单操作</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>服务支持</dt>
+                            <dd><a href="">售后政策</a></dd>
+                            <dd><a href="">自助服务</a></dd>
+                            <dd><a href="">相关下载</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>线下门店</dt>
+                            <dd><a href="">小米之家</a></dd>
+                            <dd><a href="">服务网点</a></dd>
+                            <dd><a href="">零售网点</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>关于小米</dt>
+                            <dd><a href="">了解小米</a></dd>
+                            <dd><a href="">加入小米</a></dd>
+                            <dd><a href="">联系我们</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>关注我们</dt>
+                            <dd><a href="">新浪微博</a></dd>
+                            <dd><a href="">小米部落</a></dd>
+                            <dd><a href="">官方微信</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>特色服务</dt>
+                            <dd><a href="">F码通道</a></dd>
+                            <dd><a href="">小米移动</a></dd>
+                            <dd><a href="">防伪查询</a></dd>
+                        </dl>
+                    </div>
+                    <div class="infoRight">
+                        <h3>400-100-5678</h3>
+                        <p>周一至周日 8:00-18:00 <br>（仅收市话费）</p>
+                        <a href="javacript:;">24小时在线客服</a>
+                    </div>
+                </div>
+                <div class="friendLink">
+                    <div class="friends clearfix">
+                        <img src="images/logo.png" alt="" class="sublogo">
+                        <div class="links">
+                            <div class="linksTop">
+                                <ul>
+                                    <li><a href="#">小米商城<span>|</span></a></li>
+                                    <li><a href="#">MIUI<span>|</span></a></li>
+                                    <li><a href="#">米聊<span>|</span></a></li>
+                                    <li><a href="#">多看书城<span>|</span></a></li>
+                                    <li><a href="#">小米路由器<span>|</span></a></li>
+                                    <li><a href="#">视频电话<span>|</span></a></li>
+                                    <li><a href="#">小米后院<span>|</span></a></li>
+                                    <li><a href="#">小米天猫店<span>|</span></a></li>
+                                    <li><a href="#">小米淘宝直营店<span>|</span></a></li>
+                                    <li><a href="#">小米网盟<span>|</span></a></li>
+                                    <li><a href="#">问题反馈<span>|</span></a></li>
+                                    <li><a href="#">Select Region<span></span></a></li>
+                                </ul>
+                            </div>
+                            <p class="beian">©<a href="mi.com">mi.com</a> 京ICP证110507号 京ICP备10046444号 <a href="#">京公网安备11010802020134号</a>                                <a href="#">京网文[2014]0059-0009号</a></p>
+                            <p class="cn">违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+                        </div>
+                        <div class="imgR">
+                            <img src="images/v-logo-1.png" alt="">
+                            <img src="images/v-logo-2.png" alt="">
+                            <img src="images/v-logo-3.png" alt="">
+                        </div>
+                    </div>
+                    <p class="slogon"> 探索黑科技，小米为发烧而生 </p>
+                </div>
+            </div>
+        </footer>
+     
+    
+
+        
+</body>
+
+</html>
+
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.gradientify.min.js"></script>
+<script src="js/template-web.js"></script>
+<script src="js/indexz.js"></script>
+
+
+

@@ -1,0 +1,513 @@
+/*css 初始化 */
+
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img,
+input {
+    margin: 0;
+    padding: 0;
+    /*清除元素的内外边距*/
+    box-sizing: content-box;
+}
+
+fieldset,
+img,
+input,
+button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+    /*外面环绕线*/
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+/*去掉原样式中的小黑点*/
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    /*合并外边线*/
+}
+
+body {
+    font: 12px/150% "microsoft yahei";
+    color: #666;
+    background: #F6F6F6;
+}
+
+.clearfix::after,
+.clearfix::before {
+    content: "";
+    display: table;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+a {
+    color: #666;
+    /*a 标签是不继承颜色 的*/
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+s,
+i,
+em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.col-red {
+    color: #F10215 !important;
+  
+}
+
+.w {
+    /*版心 提取 */
+    width: 1226px;
+    margin: 0 auto;
+}
+#willesPlay{
+	/*width: 1000px;
+	height: 660px;*/
+	/*width: 1024px;
+	height: auto;*/
+	top: 70PX;
+	box-shadow: 0px 0px 15px #333333;
+    position:fixed;
+    left: 338px;
+    
+ 
+    display: none;
+    
+     z-index: 99999;
+}
+/*播放器头部*/
+#willesPlay .playHeader{
+	width: 100%;
+    height: 48px;
+    background-color:green;
+	background: url(../images/playheader.jpg) repeat-x;
+	border-radius: 3px 3px 0px 0px;
+}
+#willesPlay .playHeader .videoName{
+	font-size: 16px;
+	width: 400px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	margin: 0 auto;
+    color: #7a7f82;
+    position: relative;
+
+}
+#willesPlay .playHeader .videoName  .closeV{
+    position: absolute;
+    right: -420px;
+    font-size: 30px;
+}
+#willesPlay .playContent{
+	position: relative;
+	height: auto;
+	overflow: hidden;
+	background:#000;
+	cursor: pointer;
+}
+#willesPlay .playContent .turnoff{
+	position: absolute;
+	z-index: 10;
+	right: -40px;
+	top: 50%;
+	margin-top: -90px;
+}
+#willesPlay .playContent .turnoff li a{
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 20px;
+	color: #fff;
+	background: rgba(0,0,0,.5);
+}
+#willesPlay .playContent .turnoff li a:hover{
+	color: #666;
+}
+#willesPlay .playContent .playTip{
+	position: absolute;
+	width: 110px;
+	height: 110px;
+	text-align: center;
+	line-height: 110px;
+	top: 50%;
+	left: 50%;
+	margin-left: -55px;
+	margin-top: -55px;
+	background: #ef6a6c;
+	font-size: 60px;
+	border: 3px solid #FFFFFF;
+	border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+}
+#willesPlay .playControll{
+	position: absolute;
+	z-index: 2147483650;
+	width: 100%;
+	height: 48px;
+	bottom: -48px;
+	background: url(../images/playheader.jpg) repeat-x;
+	border-radius: 0px 0px 3px 3px;
+	-moz-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;   
+}
+#willesPlay .fullControll{
+	background:rgba(0,0,0,.5);
+}
+#willesPlay .fullControll .timebar span{
+	color: #FFFFFF;
+}
+#willesPlay .playControll .playPause{
+	float: left;
+	width: 20px;
+	height: 25px;
+	background: url(../images/control_01.png) 0px 0px no-repeat;
+	margin: 11px 0px 0px 12px;
+	cursor: pointer;
+}
+#willesPlay .playControll .playIcon{
+	background-position: 0px -32px;
+}
+/*进度条*/
+#willesPlay .playControll .timebar{
+float: left;
+width: calc(100% - 145px);
+line-height: 48px;
+overflow: hidden;
+margin: 0 auto;
+margin: 0px 0px 0px 20px;
+}
+#willesPlay .playControll .timebar .progress{
+	float: left;
+	width: 80%;
+	margin: 19px 5px;
+	height: 10px;
+	cursor: pointer;
+}
+#willesPlay .playControll .timebar span{
+	float: left;
+	width: 8%;
+	text-align: center;
+}
+#willesPlay .otherControl{
+	float: right;
+	position: relative;
+}
+
+#willesPlay .otherControl span{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	vertical-align: middle;
+	font-size: 20px;
+	margin: 9px  7px;
+	/*background: url(../images/control_01.png) no-repeat;*/
+	cursor: pointer;
+}
+#willesPlay .otherControl span:nth-child(1){
+	font-size: 28px;
+	color: #ef6a6c;
+}
+/*#willesPlay .otherControl span:nth-child(2){
+	background-position: -171px 0px;
+}*/
+#willesPlay .otherControl span:nth-child(2){
+	color: #919597;
+}
+/*音量*/
+#willesPlay .otherControl .volumeBar{
+	display: none;
+	position: absolute;
+	top: -110px;
+	left:4px;
+	width: 26px;
+	height: 100px;
+	background:#f1f2f2;
+	border-radius: 4px;
+	cursor: pointer;
+}
+#willesPlay .otherControl .volumeBar:after{
+	content:"";
+	display: block;
+	position:absolute;
+	bottom: -7px;
+	left: 5px;
+	width: 0;
+    height: 0;
+    border-left:8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #f1f2f2;
+}
+#willesPlay .otherControl .volumeBar .volumewrap{
+	background: #a2a7aa;
+	width: 8px;
+	height: 80px;
+	position: absolute;
+	bottom: 10px;
+	left: 9px;
+	border-radius: 4px;
+}
+
+#willesPlay .otherControl .volumeBar .progress{
+	background: none;
+}
+#willesPlay .otherControl .volumeBar .progress-bar{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	border-radius: 4px;
+}
+video::-webkit-media-controls-enclosure {
+   
+    display: none !important;
+}
+/*底部播放器  */
+      .videos{
+	height: 800px;
+	width: 1200px;
+	position: fixed;
+	top: 35%;
+	margin-top: -260px;
+	left: 40%;
+	margin-left: -400px;
+	z-index: 2000;
+}
+
+.video_mask{
+	height: 100%;
+    width: 100%;
+    background: #333;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    z-index: 1500;
+}
+
+.closeVideo{
+	position: fixed;
+	display: block;
+	width: 60px;
+	height: 60px;
+	font-size: 30px;
+	top: 16%;
+	left: 85%;
+	background: #333;
+	color: #fff;
+	text-align: center;
+	line-height: 60px;
+	z-index: 3000;
+	cursor: pointer;
+}
+/*第二动画样式  */
+        .circleProgress_wrapper {
+            width: 600px;
+            height: 600px;
+            margin: 50px auto;
+            position: absolute;
+            z-index: 10000;
+            left: 400px;
+            /* background-color: skyblue; */
+        }
+        
+
+        .wrapper {
+            width: 600px;
+            background-color: transparent;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .rights {
+            width: 600px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            transform: rotateZ(-45deg);
+            transform-origin: center bottom;
+        }
+
+        .lefts {
+            margin: 0 auto;
+            width: 600px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .circleProgress {
+            width: 480px;
+            height: 480px;
+            border: 20px solid transparent;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+        }
+
+        .rightcircle {
+            margin-left: 22px;
+            border-top: 30px solid green;
+            border-right: 30px solid green;
+            transform: rotateZ(135deg);
+            -webkit-animation: circleProgressLoad_right 3s linear forwards;
+        }
+
+        .leftcircle {
+            top: -300px;
+            border-bottom: 30px solid green;
+            border-left: 28px solid green;
+            transform: rotateZ(135deg);
+            -webkit-animation: circleProgressLoad_left 3s 2.3s linear forwards;
+        }
+
+
+        @-webkit-keyframes circleProgressLoad_right {
+
+            100% {
+                transform: rotateZ(-35deg);
+            }
+        }
+
+        @-webkit-keyframes circleProgressLoad_left {
+            50% {
+                border-width: 29px;
+            }
+            100% {
+                transform: rotateZ(-45deg);
+                border-width: 30px;
+            }
+        }
+        .circleProgress_wrapper .first{
+            position: absolute;
+            /* width: 260px; */
+            height: 30px;
+             left: 276px; 
+           
+            bottom: 300px;
+            /* opacity: 1; */
+            opacity: 0;
+            border-radius: 15px;
+            background-color: green;
+        }
+        .circleProgress_wrapper .second{
+            position: absolute;
+            width: 30px;
+            /* height: 300px; */
+            right: 60px;
+            /* bottom: 25px; */
+            bottom:325px;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: green;
+        }
+        .circleProgress_wrapper .third{
+            position: absolute;
+             /* width: 420px;  */
+            height: 30px;
+            /* left: 600px; */
+            left:1020px;
+      
+            top: 50px;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: green;
+        }
+        .circleProgress_wrapper .fourth{
+            position: absolute;
+            width: 30px;
+            /* height: 500px; */
+           right: -30px;
+            top: 50px;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: green;
+        }
+        .circleProgress_wrapper .fifth{
+             position: absolute;
+            /* width: 420px; */
+            height: 30px;
+           left: 1020px;
+            top: 50%;
+            margin-top: -15px;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: green;
+        }
+        .circleProgress_wrapper .sixth{
+            position: absolute;
+
+            /* width: 420px; */
+            height: 30px;
+           left: 1020px;
+            bottom: 50px;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: green;
+        }
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.of-hidden{
+    overflow: hidden;
+}
